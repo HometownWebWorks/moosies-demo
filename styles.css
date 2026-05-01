@@ -139,6 +139,52 @@ a {
   text-underline-offset: 2px;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15120f;
+    --surface: #201a15;
+    --ink: #f2e6d8;
+    --muted: #ceb9a6;
+    --accent: #d57a53;
+    --accent-dark: #b65f3a;
+    --olive: #9aac83;
+    --gold: #ddb866;
+    --border: #3d3026;
+    --shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+  }
+
+  body {
+    background:
+      radial-gradient(circle at top left, rgba(213, 122, 83, 0.12), transparent 28%),
+      radial-gradient(circle at right 12%, rgba(154, 172, 131, 0.12), transparent 24%),
+      linear-gradient(180deg, #191512 0%, var(--bg) 100%);
+  }
+
+  .panel {
+    background: var(--surface);
+  }
+
+  .site-nav a {
+    background: #261f1a;
+  }
+
+  .button-secondary {
+    border-color: #d6c2ae;
+    color: #f2e6d8;
+  }
+
+  .topbar::before {
+    background: linear-gradient(
+      110deg,
+      rgba(139, 62, 35, 0.95) 0%,
+      rgba(147, 114, 42, 0.95) 35%,
+      rgba(83, 101, 65, 0.95) 65%,
+      rgba(139, 62, 35, 0.95) 100%
+    );
+    background-size: 220% 220%;
+  }
+}
+
 .site-header {
   position: sticky;
   top: 0.6rem;
