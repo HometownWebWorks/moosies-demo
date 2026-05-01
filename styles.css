@@ -31,19 +31,52 @@ body {
   position: relative;
 }
 
-body::before {
-  content: "";
+.bg-orbs {
   position: fixed;
-  inset: -12% -8%;
-  z-index: 0;
+  inset: 0;
   pointer-events: none;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(181, 79, 44, 0.2), transparent 30%),
-    radial-gradient(circle at 78% 28%, rgba(110, 123, 79, 0.18), transparent 28%),
-    radial-gradient(circle at 52% 76%, rgba(206, 161, 59, 0.16), transparent 28%);
-  filter: blur(12px);
-  opacity: 0.9;
-  animation: driftGlow 14s ease-in-out infinite alternate;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(36px);
+  opacity: 0.5;
+}
+
+.orb-one {
+  width: 34vw;
+  height: 34vw;
+  min-width: 240px;
+  min-height: 240px;
+  background: rgba(181, 79, 44, 0.35);
+  left: -8vw;
+  top: 8vh;
+  animation: floatOne 11s ease-in-out infinite alternate;
+}
+
+.orb-two {
+  width: 28vw;
+  height: 28vw;
+  min-width: 220px;
+  min-height: 220px;
+  background: rgba(110, 123, 79, 0.32);
+  right: -6vw;
+  top: 18vh;
+  animation: floatTwo 13s ease-in-out infinite alternate;
+}
+
+.orb-three {
+  width: 26vw;
+  height: 26vw;
+  min-width: 200px;
+  min-height: 200px;
+  background: rgba(206, 161, 59, 0.3);
+  left: 30vw;
+  bottom: -10vh;
+  animation: floatThree 15s ease-in-out infinite alternate;
 }
 
 .topbar,
@@ -349,6 +382,33 @@ p {
   }
   100% {
     transform: translate3d(2.6%, -2.2%, 0) scale(1.1);
+  }
+}
+
+@keyframes floatOne {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(9vw, -4vh, 0) scale(1.14);
+  }
+}
+
+@keyframes floatTwo {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(-8vw, 5vh, 0) scale(1.1);
+  }
+}
+
+@keyframes floatThree {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(7vw, -6vh, 0) scale(1.12);
   }
 }
 
