@@ -34,14 +34,24 @@ body {
 body::before {
   content: "";
   position: fixed;
-  inset: -18% -12%;
-  z-index: -1;
+  inset: -12% -8%;
+  z-index: 0;
+  pointer-events: none;
   background:
-    radial-gradient(circle at 20% 20%, rgba(181, 79, 44, 0.16), transparent 28%),
-    radial-gradient(circle at 80% 30%, rgba(110, 123, 79, 0.15), transparent 26%),
-    radial-gradient(circle at 50% 78%, rgba(206, 161, 59, 0.14), transparent 26%);
-  filter: blur(10px);
-  animation: driftGlow 18s ease-in-out infinite alternate;
+    radial-gradient(circle at 20% 20%, rgba(181, 79, 44, 0.2), transparent 30%),
+    radial-gradient(circle at 78% 28%, rgba(110, 123, 79, 0.18), transparent 28%),
+    radial-gradient(circle at 52% 76%, rgba(206, 161, 59, 0.16), transparent 28%);
+  filter: blur(12px);
+  opacity: 0.9;
+  animation: driftGlow 14s ease-in-out infinite alternate;
+}
+
+.topbar,
+.site-header,
+.section,
+.site-footer {
+  position: relative;
+  z-index: 1;
 }
 
 a {
@@ -335,10 +345,10 @@ p {
 
 @keyframes driftGlow {
   0% {
-    transform: translate3d(0, 0, 0) scale(1);
+    transform: translate3d(-1.5%, 0.5%, 0) scale(1);
   }
   100% {
-    transform: translate3d(2.5%, -1.5%, 0) scale(1.08);
+    transform: translate3d(2.6%, -2.2%, 0) scale(1.1);
   }
 }
 
