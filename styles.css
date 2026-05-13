@@ -442,6 +442,14 @@ p {
     linear-gradient(180deg, #fff7ea, #f8ebdb);
 }
 
+@media (prefers-color-scheme: dark) {
+  .inquiry-panel {
+    background:
+      radial-gradient(circle at top right, rgba(221, 184, 102, 0.16), transparent 30%),
+      linear-gradient(180deg, #281f18, #1d1712);
+  }
+}
+
 .info-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
